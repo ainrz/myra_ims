@@ -1,3 +1,21 @@
+<?php ob_start(); //output buffer...penting..xde nie leh error?> 
+<?php include "db.php"; //db terlibat?>
+
+
+
+<?php session_start(); //session nie penting utk login?>
+
+<?php 
+
+if (strlen($_SESSION['user']) == 0) {
+   header("location:login.php"); // kalau session 0 atau set 0 die akan redirect ke login.php...security purpose
+}
+
+ ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
