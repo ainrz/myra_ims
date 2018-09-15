@@ -25,6 +25,7 @@ if (isset($_POST['login'])) {
 			$_SESSION['user'] = $username;
 			$message = "correct password";
 			//header("location:../index.php");
+			header("location:index.php");
 		} else {
 
 			//$message = "incorrect password or username";
