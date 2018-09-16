@@ -1,40 +1,51 @@
+<?php session_start(); ?>
+<?php error_reporting(0); ?>
+
+
+
 <?php include("includes/db.php"); ?>
 <?php 
  
 $message = ""; 
 
-if (isset($_POST['login'])) {
+if (isset($_POST['login'])){
 
-	$username = mysqli_real_escape_string($connection, isset($_POST['username']));
-	$password = mysqli_real_escape_string($connection, isset($_POST['password']));	
-	
-	if ($username == "" || $password == "") {
-		
-		$message = "Do not leave blank";
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-	} else {
+    if (empty($username) || empty($password)) {
+        
+        $message = "<p class='bg-danger'>Username or password is empty</p>";
+    } else {
 
-		// $sql = "SELECT * FROM users WHERE username='{$username}' AND password='{$password}'";
-		// $query = mysqli_query($connection, $sql);
-		$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-		$login_query = mysqli_query($connection, $query);
-		$row = mysqli_num_rows($login_query);
+        $query = "SELECT * FROM users "; //concatinate query nak bagi nampak kemas
+        $query .= "WHERE username = '$username' ";
+        $query .= "AND password = '$password'";
 
-		if ($row == true) {
-			
-			$_SESSION['user'] = $username;
-			$message = "correct password";
-			//header("location:../index.php");
-			header("location:index.php");
-		} else {
+        $login_query = mysqli_query($connection, $query);
 
-			//$message = "incorrect password or username";
-		}
+        if (!$login_query) {
+            die("query error" . mysqli_error($connection));
+            exit();
+        }
 
-		
-	}
+        $row = mysqli_fetch_array($login_query);
 
 
+        if ($row == true) {
+            
+            $_SESSION['user'] = $username;
+            $_SESSION['id'] = $row['id'];
+            $message = "correct password";
+
+            header("location:index.php");
+            exit();
+        } else {
+            $message = "<p class='bg-danger'>incorrect password or username</p>";
+        }
+    }
+ 
+    
 }
 
 
@@ -72,12 +83,7 @@ if (isset($_POST['login'])) {
         <!-- Custom Fonts -->
         <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        
     </head>
     <body>
 
@@ -103,10 +109,9 @@ if (isset($_POST['login'])) {
                                             <input name="remember" type="checkbox" value="Remember Me">Remember Me
                                         </label>
                                     </div>
-                                    <!-- Change this to a button or input when using this as a form -->
-                                    <!-- <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a> -->
+                                
                                     <div class="form-group">
-                                        <input class="btn btn-lg btn-block btn-success " name="login" type="submit">
+                                        <input class="btn btn-lg btn-block btn-success" name="login" type="submit">
                                     </div>
                                 </fieldset>
                             </form>
