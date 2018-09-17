@@ -10,8 +10,8 @@ $message = "";
 
 if (isset($_POST['login'])){
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = mysqli_real_escape_string($connection, $_POST['username']);
+    $password = mysqli_real_escape_string($connection, $_POST['password']);
 
     if (empty($username) || empty($password)) {
         
@@ -29,20 +29,46 @@ if (isset($_POST['login'])){
             exit();
         }
 
-        $row = mysqli_fetch_array($login_query);
+        //looping utk set variable..
 
-
-        if ($row == true) {
+        while ($row = mysqli_fetch_assoc($login_query)) {
             
-            $_SESSION['user'] = $username;
-            $_SESSION['id'] = $row['id'];
-            $message = "correct password";
+            $db_id = $row['id'];
+            $db_username = $row['username'];
+            $db_email = $row['email'];
+            $db_password = $row['password'];
+
+        }
+
+        //$row = mysqli_fetch_array($login_query);
+
+        //check username and password yg ade kt dalam database.
+
+        if ($username === $db_username && $password === $db_password) {
+            
+            $_SESSION['id'] = $db_id;
+            $_SESSION['user'] = $db_username;
+            $_SESSION['email'] = $db_email;
 
             header("location:index.php");
-            exit();
+
         } else {
+
             $message = "<p class='bg-danger'>incorrect password or username</p>";
         }
+
+
+        // if ($row == true) {
+            
+        //     $_SESSION['user'] = $username;
+        //     $_SESSION['id'] = $row['id'];
+        //     $message = "correct password";
+
+        //     header("location:index.php");
+        //     exit();
+        // } else {
+        //     $message = "<p class='bg-danger'>incorrect password or username</p>";
+        // }
     }
  
     
