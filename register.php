@@ -26,8 +26,8 @@
 	        include "includes/edit_user.php";
 	        break;
 	        
-	        case '200';
-	        echo 'nice 200';
+	        // case '200';
+	        // echo 'nice 200';
 	        
 	    default:
 	        include "includes/view_all_users.php";
