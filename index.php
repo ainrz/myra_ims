@@ -11,29 +11,32 @@
         </div>
     </div>
 
-    <!-- <div class="row">
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    heading
-                </div>
-                <div class="panel-body">
-                    test
-                </div>
-            </div>
-        </div>
+    <div class="row">
+        
 
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    heading
-                </div>
                 <div class="panel-body">
-                    test hjgjygfjy
+                    <h1 class="text-primary page-header text-center">Welcome to MyRA_IMS system</h1>
+                    <div class="text-center">
+                        <img src="http://ilmu.unisel.edu.my/equip-unisel/custom/imgs/button/unisel.png" class="rounded">
+
+                    </div>
+                    
                 </div>
+
+                <div class="panel-footer">
+                    <p>
+                        <div class="text-center">
+                            <a href="guideline.php" class="btn btn-primary">see guidline</a>
+                        </div>
+                    
+                </p>
+                </div>
+                
             </div>
         </div>
-    </div> -->
+    </div>
 </div>
 
     
