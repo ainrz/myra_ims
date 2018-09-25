@@ -7,7 +7,7 @@
 <div class="row">
 	<div class="col-lg-8">
 	<p><a href="register.php?source=add_user" class="btn btn-primary">Register user</a></p>
-	<table class="table table-bordered table-hover">
+	<table class="table table-bordered table-hover" id="dataTables-example">
 		
 		<thead>
 			<tr>
@@ -65,3 +65,11 @@ if (isset($_GET['delete'])) {
 
 
  ?>
+
+ <script>
+            $(document).ready(function() {
+                $('#dataTables-example').DataTable({
+                        responsive: true
+                });
+            });
+ </script>
