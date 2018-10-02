@@ -31,7 +31,7 @@
                             <a href="guideline.php" class="btn btn-primary">see guidline</a>
                         </div>
                     
-                </p>
+                    </p>
                 </div>
                 
             </div>
