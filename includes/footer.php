@@ -1,18 +1,8 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-    <script src="/js/jquery.min.js"></script>
+</body>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="/js/metisMenu.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="/js/raphael.min.js"></script>
-    <script src="/js/morris.min.js"></script>
-    <script src="/js/morris-data.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="/js/startmin.js"></script>
-  </body>
 </html>

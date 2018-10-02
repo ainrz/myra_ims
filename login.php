@@ -4,6 +4,7 @@
 
 
 <?php include("includes/db.php"); ?>
+<?php include("functions.php"); ?>
 <?php 
  
 $message = ""; 
@@ -15,7 +16,8 @@ if (isset($_POST['login'])){
 
     if (empty($username) || empty($password)) {
         
-        $message = "<p class='bg-danger'>Username or password is empty</p>";
+        //$message = "<p class='bg-danger'>Username or password is empty</p>";
+        set_message("Username or password is empty");
     } else {
 
         $query = "SELECT * FROM users "; //concatinate query nak bagi nampak kemas
@@ -54,21 +56,12 @@ if (isset($_POST['login'])){
 
         } else {
 
-            $message = "<p class='bg-danger'>incorrect password or username</p>";
+            //$message = "<p class='bg-danger'>incorrect password or username</p>";
+            set_message("incorrect password or username");
         }
 
 
-        // if ($row == true) {
-            
-        //     $_SESSION['user'] = $username;
-        //     $_SESSION['id'] = $row['id'];
-        //     $message = "correct password";
-
-        //     header("location:index.php");
-        //     exit();
-        // } else {
-        //     $message = "<p class='bg-danger'>incorrect password or username</p>";
-        // }
+       
     }
  
     
@@ -121,7 +114,7 @@ if (isset($_POST['login'])){
                             <h3 class="panel-title">Please Sign In</h3>
                         </div>
                         <div class="panel-body">
-                        	<?php echo $message; ?>
+                        	<?php display_message(); ?>
                             <form action="" method="post">
                                 <fieldset>
                                     <div class="form-group">
