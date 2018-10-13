@@ -13,6 +13,8 @@
 			<tr>
 				<th>id</th>
 				<th>username</th>
+				<th>department</th>
+				<th>staff id</th>
 				<th>email</th>
 				<th>password</th>
 				<th>edit</th>
@@ -30,6 +32,8 @@
 				<tr>
 					<td><?php echo $row['id']; ?></td>
 					<td><?php echo $row['username']; ?></td>
+					<td><?php echo $row['department']; ?></td>
+					<td><?php echo $row['staffid']; ?></td>
 					<td><?php echo $row['email']; ?></td>
 					<td><?php echo $row['password']; ?></td>
 					<td><a href="register.php?source=edit_user&uid=<?php echo $row['id']; ?>">edit</a></td>
