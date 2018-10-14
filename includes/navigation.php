@@ -24,12 +24,31 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Section <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="sec_a.php">Section A</a></li>
+                   <!--  <li><a href="sec_a.php">Section A</a></li> -->
+                   <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#">Section A</a>
+                        <ul class="dropdown-menu">
+                          <li><a tabindex="-1" href="sec_a.php">General Information</a></li>
+                          <!-- <li class="dropdown-submenu">
+                            <a href="#">More..</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">3rd level</a></li>
+                                <li><a href="#">3rd level</a></li>
+                            </ul>
+                          </li> -->
+                          <!-- <li><a href="#">Second level</a></li>
+                          <li><a href="#">Second level</a></li> -->
+                        </ul>
+                    </li>
                     <li><a href="#">Section B</a></li>
                     <li><a href="#">Section C</a></li>
+                    
                   </ul>
                 </li>
                 <li><a href="analytics.php">Analytics</a></li>
+
+                
+
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
