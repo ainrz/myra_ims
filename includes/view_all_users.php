@@ -11,7 +11,6 @@
 		
 		<thead>
 			<tr>
-				<th>id</th>
 				<th>username</th>
 				<th>department</th>
 				<th>staff id</th>
@@ -30,7 +29,6 @@
 			while ($row = mysqli_fetch_assoc($select_user_query)) {?>
 
 				<tr>
-					<td><?php echo $row['id']; ?></td>
 					<td><?php echo $row['username']; ?></td>
 					<td><?php echo $row['department']; ?></td>
 					<td><?php echo $row['staffid']; ?></td>

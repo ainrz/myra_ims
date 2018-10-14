@@ -27,7 +27,6 @@
                     <li><a href="sec_a.php">Section A</a></li>
                     <li><a href="#">Section B</a></li>
                     <li><a href="#">Section C</a></li>
-                  
                   </ul>
                 </li>
                 <li><a href="analytics.php">Analytics</a></li>
