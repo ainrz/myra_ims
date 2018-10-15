@@ -31,7 +31,7 @@
 			break;	
 		
 		default:
-			include "includes/view_staff.php";
+			include "includes/display_info.php";
 			break;
 	}
 
