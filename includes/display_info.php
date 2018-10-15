@@ -1,4 +1,14 @@
 <div class="row">
+
+	    <div class="col-lg-12">
+	        <h1 class="page-header">Section A : Display info</h1>
+	    </div>
+	</div>
+
+	<div class="row">
+	<div class="col-lg-12">
+	<p><a href="sec_a.php?source=add_staff" class="btn btn-primary">Staff</a></p>
+=======
     <div class="col-lg-12">
         <h1 class="page-header">Staff List</h1>
     </div>
@@ -7,12 +17,20 @@
 <div class="row">
 	<div class="col-lg-8">
 	<p><a href="sec_a.php?source=sec_a.php" class="btn btn-primary">Staff</a></p>
+
 	<table class="table table-bordered table-hover" id="dataTables-example">
 		
 		<thead>
 			<tr>
+
+				<th>id</th>
 				<th>Staff ID</th>
 				<th>Staff Name</th>
+				<th>Position</th>
+
+				<th>Staff ID</th>
+				<th>Staff Name</th>
+
 				<th>grade</th>
 				<th>first appointment date</th>
 				<th>Appointment date for current position</th>
@@ -37,12 +55,21 @@
 		<tbody>
 			<?php 
 
+			$query = "SELECT * FROM staffs";
+			$select_user_query = mysqli_query($connection, $query);
+			while ($row = mysqli_fetch_assoc($select_user_query)) {?>
+
+				<tr>
+					<td><?php echo $row['id']; ?></td>
+
+
 			$query = "SELECT * FROM users";
 			$select_user_query = mysqli_query($connection, $query);
 
 			while ($row = mysqli_fetch_assoc($select_user_query)) {?>
 
 				<tr>
+
 					<td><?php echo $row['staff_id']; ?></td>
 					<td><?php echo $row['staff_name']; ?></td>
 					<td><?php echo $row['position']; ?></td>
@@ -74,6 +101,12 @@
 		</tbody>
 	</table>
 </div>
+
+
+</div>
+
+<script>
+
 <div class="col-lg-4">
 	<div class="well well-sm">Senarai pelajar yang didaftar</div>
 </div>
@@ -98,6 +131,7 @@ if (isset($_GET['delete'])) {
  ?>
 
  <script>
+
             $(document).ready(function() {
                 $('#dataTables-example').DataTable({
                         responsive: true
