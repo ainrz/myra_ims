@@ -15,7 +15,7 @@
 				$staff_name = $_POST['staff_name'];
 				$position = $_POST['position'];
 				$grade = $_POST['grade'];
-				$first_app_date = $_POST['1st_app_date'];
+				$first_app_date = $_POST['first_app_date'];
 				$app_date_current = $_POST['app_date_current'];
 				$service_end_date = $_POST['service_end_date'];
 				$dob = $_POST['dob'];
@@ -93,7 +93,7 @@
 			</div>
 			<div class="form-group">
 				<label for="1st_app_date">First Appointment date</label>
-				<input type="date" name="1st_app_date" class="form-control" required>
+				<input type="date" name="first_app_date" class="form-control" required>
 			</div>
 			<div class="form-group">
 				<label for="app_date_current">Appointment date for current position</label>
