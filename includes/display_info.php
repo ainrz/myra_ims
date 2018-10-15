@@ -64,8 +64,8 @@
 					<td><?php echo $row['citizenship']; ?></td>
 					<td><?php echo $row['country']; ?></td>
 					<td><?php echo $row['remarks']; ?></td>
-					<!-- <td><a href="register.php?source=edit_user&uid=<?php echo $row['id']; ?>">edit</a></td>
-					<td><a onClick="javascript: return confirm('Are you sure you want to delete?');" href="register.php?delete=<?php echo $row['id']; ?>">delete</a></td> -->
+					<!-- <td><a href="register.php?source=edit_user&uid=<?php //echo $row['id']; ?>">edit</a></td>
+					<td><a onClick="javascript: return confirm('Are you sure you want to delete?');" href="register.php?delete=<?php //echo $row['id']; ?>">delete</a></td> -->
 				</tr>
 				<?php
 			}
