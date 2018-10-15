@@ -4,11 +4,6 @@
     <?php include("includes/navigation.php"); ?>
 
 
-    <?php 
-
-    $message = "";
-
-    ?>
 
     	<?php 
 
@@ -20,7 +15,7 @@
 				$staff_name = $_POST['staff_name'];
 				$position = $_POST['position'];
 				$grade = $_POST['grade'];
-				$first_app_date = $_POST['1st_app_date'];
+				$first_app_date = $_POST['first_app_date'];
 				$app_date_current = $_POST['app_date_current'];
 				$service_end_date = $_POST['service_end_date'];
 				$dob = $_POST['dob'];
@@ -41,15 +36,16 @@
 
 				// masukkan data kt table staff
 
+				$query = "INSERT INTO staffs(staff_id, staff_name, position, grade, first_app_date, app_date_current, service_end_date, dob, age, cohort, academic_quali, proff_quali, department, st_nonst, status_1, status_2, status_3, citizenship, country, remarks) ";
 
-				$query = "INSERT INTO staffs(staffid, staff_name, position, grade, first_app_date, app_date_current, service_end_date, dob, age, cohort, academic_quali, proff_quali, department, st_nonst, status_1, status_2, status_3, citizenship, country, remarks) ";
 
-				$query .= "VALUES('$staffid', '$staff_name', '$position', '$grade', '$first_app_date', '$app_date_current', '$service_end_date', '$dob', '$age', '$cohort', '$academic_quali', '$proff_quali', '$department', '$st_nonst', '$status_1', '$status_2', '$status_3', '$citizenship', '$country', '$remarks')";
+				$query .= "VALUES('$staff_id', '$staff_name', '$position', '$grade', '$first_app_date', '$app_date_current', '$service_end_date', '$dob', '$age', '$cohort', '$academic_quali', '$proff_quali', '$department', '$st_nonst', '$status_1', '$status_2', '$status_3', '$citizenship', '$country', '$remarks')";
 
 				$add_query = mysqli_query($connection, $query);
 
 				if (!$add_query) {
 					die("query failed" . mysqli_query($connection));
+					exit();
 				} else {
 
 					$message = "<p class='bg-danger'>user added<a href='register.php'> View user</a></p>";
@@ -460,6 +456,18 @@
 				<input type="submit" name="add" class="btn btn-block btn-primary" value="Add">
 			</div>
 		</form>
+	</div>
+	<div class="col-lg-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="text-center">
+					<img src="https://t4.ftcdn.net/jpg/01/16/06/45/240_F_116064582_KlXENacGmdt4xl8H6fQRYfSZLntLNKSX.jpg" class="rounded">
+					<h1>Staff</h1>
+				</div>
+				
+				<!-- <h1>Staff</h1> -->
+			</div>
+		</div>
 	</div>
 </div>
 
