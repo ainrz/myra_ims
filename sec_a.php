@@ -20,7 +20,7 @@
 				$staff_name = $_POST['staff_name'];
 				$position = $_POST['position'];
 				$grade = $_POST['grade'];
-				$1st_app_date = $_POST['1st_app_date'];
+				$first_app_date = $_POST['1st_app_date'];
 				$app_date_current = $_POST['app_date_current'];
 				$service_end_date = $_POST['service_end_date'];
 				$dob = $_POST['dob'];
@@ -42,9 +42,9 @@
 				// masukkan data kt table staff
 
 
-				$query = "INSERT INTO staffs(staffid, staff_name, position, grade, 1st_app_date, app_date_current, service_end_date, dob, age, cohort, academic_quali, proff_quali, department, st_nonst, status_1, status_2, status_3, citizenship, country, remarks) ";
+				$query = "INSERT INTO staffs(staffid, staff_name, position, grade, first_app_date, app_date_current, service_end_date, dob, age, cohort, academic_quali, proff_quali, department, st_nonst, status_1, status_2, status_3, citizenship, country, remarks) ";
 
-				$query .= "VALUES('$staffid', '$staff_name', '$position', '$grade', '$1st_app_date', '$app_date_current', '$service_end_date', '$dob', '$age', '$cohort', '$academic_quali', '$proff_quali', '$department', '$st_nonst', '$status_1', '$status_2', '$status_3', '$citizenship', '$country', '$remarks')";
+				$query .= "VALUES('$staffid', '$staff_name', '$position', '$grade', '$first_app_date', '$app_date_current', '$service_end_date', '$dob', '$age', '$cohort', '$academic_quali', '$proff_quali', '$department', '$st_nonst', '$status_1', '$status_2', '$status_3', '$citizenship', '$country', '$remarks')";
 
 				$add_query = mysqli_query($connection, $query);
 
@@ -94,7 +94,7 @@
 				<input type="text" name="grade" class="form-control" required>
 			</div>
 			<div class="form-group">
-				<label for="1st_app_date">First Appointment date</label>
+				<label for="first_app_date">First Appointment date</label>
 				<input type="date" name="1st_app_date" class="form-control" required>
 			</div>
 			<div class="form-group">
