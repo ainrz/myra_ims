@@ -15,23 +15,45 @@
 			$message = "";
 			if (isset($_POST['add'])) {
 				
-				$staff_id = $_POST['username'];
-				$email = $_POST['email'];
-				$password = $_POST['password'];
-				$department= $_POST['department'];
-				$staffid = $_POST['staffid'];
+
+				$staff_id = $_POST['staff_id'];
+				$staff_name = $_POST['staff_name'];
+				$position = $_POST['position'];
+				$grade = $_POST['grade'];
+				$1st_app_date = $_POST['1st_app_date'];
+				$app_date_current = $_POST['app_date_current'];
+				$service_end_date = $_POST['service_end_date'];
+				$dob = $_POST['dob'];
+				$age = $_POST['age'];
+				$cohort = $_POST['cohort'];
+				$academic_quali = $_POST['academic_quali'];
+				$proff_quali = $_POST['proff_quali'];
+				$department = $_POST['department'];
+				$st_nonst = $_POST['st_nonst'];
+
+				$status_1 = $_POST['status_1'];
+				$status_2 = $_POST['status_2'];
+				$status_3 = $_POST['status_3'];
+
+				$citizenship = $_POST['citizenship'];
+				$country = $_POST['country'];
+				$remarks = $_POST['remarks'];
+
+				// masukkan data kt table staff
 
 
-						$query = "INSERT INTO users(username, email, password, department, staffid) ";
-						$query .= "VALUES('$username', '$email', '$password', '$department', '$staffid')";
-						$add_query = mysqli_query($connection, $query);
+				$query = "INSERT INTO staffs(staffid, staff_name, position, grade, 1st_app_date, app_date_current, service_end_date, dob, age, cohort, academic_quali, proff_quali, department, st_nonst, status_1, status_2, status_3, citizenship, country, remarks) ";
 
-						if (!$add_query) {
-							die("query failed" . mysqli_query($connection));
-						} else {
+				$query .= "VALUES('$staffid', '$staff_name', '$position', '$grade', '$1st_app_date', '$app_date_current', '$service_end_date', '$dob', '$age', '$cohort', '$academic_quali', '$proff_quali', '$department', '$st_nonst', '$status_1', '$status_2', '$status_3', '$citizenship', '$country', '$remarks')";
 
-							$message = "<p class='bg-danger'>user added<a href='register.php'> View user</a></p>";
-						}
+				$add_query = mysqli_query($connection, $query);
+
+				if (!$add_query) {
+					die("query failed" . mysqli_query($connection));
+				} else {
+
+					$message = "<p class='bg-danger'>user added<a href='register.php'> View user</a></p>";
+				}
 					
 			}
 		?>
