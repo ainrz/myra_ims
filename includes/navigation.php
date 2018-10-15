@@ -28,8 +28,12 @@
                    <li class="dropdown-submenu">
                         <a tabindex="-1" href="#">Section A</a>
                         <ul class="dropdown-menu">
+
                           <li><a tabindex="-1" href="sec_a.php?source=add_staff">Staff</a></li>
                           <li><a tabindex="-1" href="sec_a.php?source=display_info">Display info</a></li>
+
+                          <li><a tabindex="-1" href="sec_a.php">Staff</a></li>
+
                           <!-- <li class="dropdown-submenu">
                             <a href="#">More..</a>
                             <ul class="dropdown-menu">
