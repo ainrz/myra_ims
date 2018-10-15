@@ -5,42 +5,6 @@
 
 
 
-    	
-
-			$message = "";
-			if (isset($_POST['add'])) {
-				
-
-				$staff_id = $_POST['staff_id'];
-				$staff_name = $_POST['staff_name'];
-				$position = $_POST['position'];
-				$grade = $_POST['grade'];
-				$first_app_date = $_POST['first_app_date'];
-				$app_date_current = $_POST['app_date_current'];
-				$service_end_date = $_POST['service_end_date'];
-				$dob = $_POST['dob'];
-				$age = $_POST['age'];
-				$cohort = $_POST['cohort'];
-				$academic_quali = $_POST['academic_quali'];
-				$proff_quali = $_POST['proff_quali'];
-				$department = $_POST['department'];
-				$st_nonst = $_POST['st_nonst'];
-
-				$status_1 = $_POST['status_1'];
-				$status_2 = $_POST['status_2'];
-				$status_3 = $_POST['status_3'];
-
-				$citizenship = $_POST['citizenship'];
-				$country = $_POST['country'];
-				$remarks = $_POST['remarks'];
-
-				// masukkan data kt table staff
-
-				$query = "INSERT INTO staffs(staff_id, staff_name, position, grade, first_app_date, app_date_current, service_end_date, dob, age, cohort, academic_quali, proff_quali, department, st_nonst, status_1, status_2, status_3, citizenship, country, remarks) ";
-
-
-				$query .= "VALUES('$staff_id', '$staff_name', '$position', '$grade', '$first_app_date', '$app_date_current', '$service_end_date', '$dob', '$age', '$cohort', '$academic_quali', '$proff_quali', '$department', '$st_nonst', '$status_1', '$status_2', '$status_3', '$citizenship', '$country', '$remarks')";
-
 
 <div class="container">
 
