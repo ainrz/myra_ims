@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2018 at 05:11 PM
+-- Generation Time: Oct 15, 2018 at 05:44 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.34
 
@@ -57,7 +57,8 @@ CREATE TABLE `staffs` (
 --
 
 INSERT INTO `staffs` (`id`, `staff_id`, `staff_name`, `position`, `grade`, `first_app_date`, `app_date_current`, `service_end_date`, `dob`, `age`, `cohort`, `academic_quali`, `proff_quali`, `department`, `st_nonst`, `status_1`, `status_2`, `status_3`, `citizenship`, `country`, `remarks`) VALUES
-(1, '2222', 'test', 'executive', 'er', '2018-10-23', '2018-10-16', '2018-10-10', '2018-10-16', 12, '34', 'Degree', 'eer', 'fcvac', 'st', 'active', 'contract', 'full_time', 'local', 'MY', '3244');
+(1, '2222', 'test', 'executive', 'er', '2018-10-23', '2018-10-16', '2018-10-10', '2018-10-16', 12, '34', 'Degree', 'eer', 'fcvac', 'st', 'active', 'contract', 'full_time', 'local', 'MY', '3244'),
+(2, '2332', 'ain', 'lecturer', 'a', '2018-10-17', '2018-10-08', '2018-10-02', '2018-10-16', 22, '4', 'Degree', 'fdfsd', 'fcvac', 'st', 'trainning', 'contract', 'full_time', 'local', 'MY', 'werew');
 
 -- --------------------------------------------------------
 
@@ -107,7 +108,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `staffs`
 --
 ALTER TABLE `staffs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
