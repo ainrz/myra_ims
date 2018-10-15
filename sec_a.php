@@ -37,11 +37,11 @@
 				// masukkan data kt table staff
 
 
-				$query = "INSERT INTO staffs(staffid, staff_name, position, grade, first_app_date, app_date_current, service_end_date, dob, age, cohort, academic_quali, proff_quali, department, st_nonst, status_1, status_2, status_3, citizenship, country, remarks) ";
+				$query = "INSERT INTO staffs(staff_id, staff_name, position, grade, first_app_date, app_date_current, service_end_date, dob, age, cohort, academic_quali, proff_quali, department, st_nonst, status_1, status_2, status_3, citizenship, country, remarks) ";
 
 				// masukkan data kt table staff
 
-				$query .= "VALUES('$staffid', '$staff_name', '$position', '$grade', '$first_app_date', '$app_date_current', '$service_end_date', '$dob', '$age', '$cohort', '$academic_quali', '$proff_quali', '$department', '$st_nonst', '$status_1', '$status_2', '$status_3', '$citizenship', '$country', '$remarks')";
+				$query .= "VALUES('$staff_id', '$staff_name', '$position', '$grade', '$first_app_date', '$app_date_current', '$service_end_date', '$dob', $age, '$cohort', '$academic_quali', '$proff_quali', '$department', '$st_nonst', '$status_1', '$status_2', '$status_3', '$citizenship', '$country', '$remarks')";
 
 				$add_query = mysqli_query($connection, $query);
 
@@ -109,7 +109,7 @@
 			</div>
 			<div class="form-group">
 				<label for="age">Age</label>
-				<input type="text" name="age" class="form-control" required>
+				<input type="number" name="age" class="form-control" required>
 			</div>
 			<div class="form-group">
 				<label for="cohort">Cohort</label>
