@@ -75,7 +75,61 @@
 	</table>
 </div>
 
+
+
 </div>
+<hr>
+<?php 
+$query = "SELECT * FROM staffs";
+			$select_user_query = mysqli_query($connection, $query);
+			while ($row = mysqli_fetch_assoc($select_user_query)){
+	?>
+
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-body">
+			<div class="row">
+				<div class="col-lg-3">
+					<img src="https://t4.ftcdn.net/jpg/01/16/06/45/240_F_116064582_KlXENacGmdt4xl8H6fQRYfSZLntLNKSX.jpg" width="200" height="200" class="rounded">
+				</div>
+				<div class="col-lg-8">
+					<p><b>id</b>: <?php echo $row['id']; ?></p>
+					<p>staff id: <?php echo $row['staff_id']; ?></p>
+					<p>staff name: <?php echo $row['staff_name']; ?></p>
+					<p>position: <?php echo $row['position']; ?></p>
+					<p>grade: <?php echo $row['grade']; ?></p>
+					<p>first appplication date: <?php echo $row['first_app_date']; ?></p>
+					<p>application date current: <?php echo $row['app_date_current']; ?></p>
+					<p>service end date: <?php echo $row['service_end_date']; ?></p>
+					<p>date of birth: <?php echo $row['dob']; ?></p>
+					<p>age: <?php echo $row['age']; ?></p>
+					<p>cohort: <?php echo $row['cohort']; ?></p>
+					<p>academic qualification: <?php echo $row['academic_quali']; ?></p>
+					<p>proffessional qualification: <?php echo $row['proff_quali']; ?></p>
+					<p>department: <?php echo $row['department']; ?></p>
+					<p>status nonst: <?php echo $row['st_nonst']; ?></p>
+					<p>status 1: <?php echo $row['status_1']; ?></p>
+					<p>status 2: <?php echo $row['status_2']; ?></p>
+					<p>status 3: <?php echo $row['status_3']; ?></p>
+					<p>citizenship: <?php echo $row['citizenship']; ?></p>
+					<p>country: <?php echo $row['country']; ?></p>
+					<p>remarks: <?php echo $row['remarks']; ?></p>
+					<hr>
+					<p>
+						<a href="#" class="btn btn-primary">Delete</a>
+						<a href="#" class="btn btn-success">Edit</a>
+					</p>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php
+}
+?>
 
 <script>
             $(document).ready(function() {

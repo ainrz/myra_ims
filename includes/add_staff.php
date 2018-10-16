@@ -40,7 +40,7 @@
 				$add_query = mysqli_query($connection, $query);
 
 				if (!$add_query) {
-					die("query failed" . mysqli_query($connection));
+					die("query failed" . mysqli_error($connection));
 					exit();
 				} else {
 
