@@ -5,14 +5,13 @@
 	    </div>
 	</div>
 
-	<div class="row">
+	<!-- <div class="row">
 	<div class="col-lg-12">
 	<p><a href="sec_a.php?source=add_staff" class="btn btn-primary">Staff</a></p>
-=======
     <div class="col-lg-12">
         <h1 class="page-header">Staff List</h1>
     </div>
-</div>
+</div> -->
 
 <div class="row">
 	<div class="col-lg-8">
@@ -23,24 +22,20 @@
 		<thead>
 			<tr>
 
-				<th>id</th>
+				<!-- <th>id</th> -->
 				<th>Staff ID</th>
 				<th>Staff Name</th>
 				<th>Position</th>
-
-				<th>Staff ID</th>
-				<th>Staff Name</th>
-
-				<th>grade</th>
-				<th>first appointment date</th>
-				<th>Appointment date for current position</th>
-				<th>Service end date</th>
+				<th>Grade</th>
+				<th>First Appointment Date</th>
+				<th>Appointment Date For Current Position</th>
+				<th>Service End Date</th>
 				<th>Date Of Birth</th>
 				<th>Age</th>
 				<th>Cohort</th>
 				<th>Academic Qualification</th>
 				<th>Profesional Qualification</th>
-				<th>Registration number for Profesional Membership</th>
+				<th>Registration Number for Profesional Membership</th>
 				<th>Department</th>
 				<th>S&T or non S&T</th>
 				<th>Status 1</th>
@@ -49,24 +44,19 @@
 				<th>Citizenship</th>
 				<th>Country</th>
 				<th>Remarks</th>
+				<th>Edit</th>
+				<th>Delete</th>
 				
 			</tr>
 		</thead>
 		<tbody>
 			<?php 
 
-			$query = "SELECT * FROM staffs";
+			$query = "SELECT * FROM staff_sec_a";
 			$select_user_query = mysqli_query($connection, $query);
 			while ($row = mysqli_fetch_assoc($select_user_query)) {?>
 
-				<tr>
-					<td><?php echo $row['id']; ?></td>
 
-
-			$query = "SELECT * FROM users";
-			$select_user_query = mysqli_query($connection, $query);
-
-			while ($row = mysqli_fetch_assoc($select_user_query)) {?>
 
 				<tr>
 
@@ -90,8 +80,8 @@
 					<td><?php echo $row['citizenship']; ?></td>
 					<td><?php echo $row['country']; ?></td>
 					<td><?php echo $row['remarks']; ?></td>
-					<!-- <td><a href="register.php?source=edit_user&uid=<?php echo $row['id']; ?>">edit</a></td>
-					<td><a onClick="javascript: return confirm('Are you sure you want to delete?');" href="register.php?delete=<?php echo $row['id']; ?>">delete</a></td> -->
+					<td><a href="register.php?source=edit_user&uid=<?php echo $row['id']; ?>">edit</a></td>
+					<td><a onClick="javascript: return confirm('Are you sure you want to delete?');" href="register.php?delete=<?php echo $row['id']; ?>">delete</a></td>
 				</tr>
 				<?php
 			}
