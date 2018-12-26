@@ -4,11 +4,6 @@
     <?php include("includes/navigation.php"); ?>
 
 
-
-    	
-
-	
-
 <div class="container">
 
 	<?php 
@@ -34,18 +29,12 @@
 			include "includes/display_info.php";
 			break;
 	}
-
-
-	 ?>
-</div>
-
-    
-
+	?>
   
 </div>
+    
 
-    
-    
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 

@@ -36,6 +36,7 @@ if (isset($_POST['login'])){
         while ($row = mysqli_fetch_assoc($login_query)) {
             
             $db_id = $row['id'];
+            $db_role= $row['role'];
             $db_username = $row['username'];
             $db_email = $row['email'];
             $db_password = $row['password'];
@@ -49,6 +50,7 @@ if (isset($_POST['login'])){
         if ($username === $db_username && $password === $db_password) {
             
             $_SESSION['id'] = $db_id;
+            $_SESSION['role'] = $db_role;
             $_SESSION['user'] = $db_username;
             $_SESSION['email'] = $db_email;
 
