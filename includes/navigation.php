@@ -31,7 +31,7 @@
 
                    <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
 
-                    <li><a href="register.php">Register new user</a></li>
+                    
                    <li class="dropdown-submenu">
                         <a tabindex="-1" href="#">Section A</a>
                         <ul class="dropdown-menu">
@@ -44,15 +44,18 @@
                          
                         </ul>
                     </li>
-                    <li><a href="#">Section B</a></li>
+                    <li><a href="sec_b.php">Section B</a></li>
                     <li><a href="#">Section C</a></li>
                     <li><a href="#">Section D</a></li>
                     <li><a href="#">Section E</a></li>
                     <li><a href="#">Section F</a></li>
                     <li><a href="#">Section G</a></li>
                     <li><a href="#">Section H</a></li>
+                    </ul>
 
+                    <li><a href="register.php">Register new user</a></li>
                     <li><a href="analytics.php">Analytics</a></li>
+
 
                     <?php elseif($_SESSION['role'] == 'hr'): ?>
 
@@ -79,12 +82,12 @@
                         </ul>
                     </li>
 
-                    <?php elseif($_SESSION['role'] == 'faculty'): ?>
+                    <?php elseif($_SESSION['role'] == 'fac'): ?>
 
                       <li><a href="#">Section C</a></li>
 
 
-                    <?php elseif($_SESSION['role'] == 'graduate'): ?>
+                    <?php elseif($_SESSION['role'] == 'grad'): ?>
 
                       <li><a href="#">Section D</a></li>
                       <li><a href="#">Section E</a></li>

@@ -12,10 +12,7 @@
 		<thead>
 			<tr>
 				<th>username</th>
-				<th>department</th>
-				<th>staff id</th>
 				<th>email</th>
-				<th>password</th>
 				<th>edit</th>
 				<th>delete</th>
 			</tr>
@@ -30,10 +27,7 @@
 
 				<tr>
 					<td><?php echo $row['username']; ?></td>
-					<td><?php echo $row['department']; ?></td>
-					<td><?php echo $row['staffid']; ?></td>
 					<td><?php echo $row['email']; ?></td>
-					<td><?php echo $row['password']; ?></td>
 					<td><a href="register.php?source=edit_user&uid=<?php echo $row['id']; ?>">edit</a></td>
 					<td><a onClick="javascript: return confirm('Are you sure you want to delete?');" href="register.php?delete=<?php echo $row['id']; ?>">delete</a></td>
 				</tr>
@@ -45,11 +39,11 @@
 		</tbody>
 	</table>
 </div>
-<div class="col-lg-4">
+<!-- <div class="col-lg-4">
 	<div class="well well-sm">Senarai pelajar yang didaftar</div>
 </div>
 </div>
-
+ -->
 <?php 
 
 if (isset($_GET['delete'])) {

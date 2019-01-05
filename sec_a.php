@@ -18,12 +18,18 @@
 
 	switch ($source) {
 		case 'add_staff':
-			include "includes/add_staff.php";
+			include "includes/add_secAstaff.php";
 			break;
-
+		case 'edit_staff':
+			include "includes/edit_secAstaff.php";
+			break;
 		case 'display_info':
 			include "includes/display_info.php";
-			break;	
+			break;
+
+		case 'display_sec_a_detail.php':
+			include "includes/display_sec_a_detail.php";
+			break;		
 		
 		default:
 			include "includes/display_info.php";

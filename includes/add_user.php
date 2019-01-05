@@ -8,8 +8,7 @@ if (isset($_POST['add'])) {
 	$username = $_POST['username'];
 	$email = $_POST['email'];
 	$password = $_POST['password'];
-	$department= $_POST['department'];
-	$staffid = $_POST['staffid'];
+	
 
 	if (empty($username) || empty($email) || empty($password)) {
 		
@@ -29,8 +28,8 @@ if (isset($_POST['add'])) {
 		} else {
 
 
-			$query = "INSERT INTO users(username, email, password, department, staffid) ";
-			$query .= "VALUES('$username', '$email', '$password', '$department', '$staffid')";
+			$query = "INSERT INTO users(username, email, password,) ";
+			$query .= "VALUES('$username', '$email', '$password')";
 			$add_query = mysqli_query($connection, $query);
 
 			if (!$add_query) {
@@ -72,28 +71,6 @@ if (isset($_POST['add'])) {
 			<div class="form-group">
 				<label for="username">Username</label>
 				<input type="text" name="username" class="form-control" required>
-			</div>
-			<div class="form-group">
-				<label for="department">Department</label>
-				<select class="form-control" name="department" required>
-					<option value="">--Please select--</option>
-
-					<option value="admin_hr">Administration & Human Resources Office</option>
-					<option value="record_convo">Record & Convocation Unit</option>
-					<option value="fcvac">Faculty of Communication, Visual Art & Computing</option>
-					<option value="fels">Faculty of Engineering & Life Science</option>
-					<option value="fess">Faculty of Education & Science Social</option>
-					<option value="fba">Faculty of Business & Accountancy</option>
-					<option value="grad_stu">Centre of Graduate Studies</option>
-					<option value="bursar">Bursar Office</option>
-					<option value="coe">Centre of Excellent</option>
-					<option value="library">Unisel Library</option>
-				</select>
-			</div>
-			
-			<div class="form-group">
-				<label for="staffid">StaffID</label>
-				<input type="text" name="staffid" class="form-control" required>
 			</div>
 			<div class="form-group">
 				<label for="email">Email</label>

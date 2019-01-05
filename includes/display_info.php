@@ -14,7 +14,7 @@
 </div> -->
 
 <div class="row">
-	<div class="col-lg-8">
+	<div class="col-lg-12">
 	<p><a href="sec_a.php?source=sec_a.php" class="btn btn-primary">Staff</a></p>
 
 	<table class="table table-bordered table-hover" id="dataTables-example">
@@ -23,14 +23,15 @@
 			<tr>
 
 				<!-- <th>id</th> -->
-				<th>Staff ID</th>
-				<th>Staff Name</th>
-				<th>Position</th>
-				<th>Grade</th>
-				<th>First Appointment Date</th>
-				<th>Appointment Date For Current Position</th>
-				<th>Service End Date</th>
-				<th>Date Of Birth</th>
+				<th width="12%">Staff ID</th>
+				<th width="12%">Staff Name</th>
+				<th width="12%">Position</th>
+				<th width="12%">Grade</th>
+				<th width="12%">First Appointment Date</th>
+				<th width="12%">Appointment Date For Current Position</th>
+				<th width="12%">Service End Date</th>
+				<th width="12%">Details</th>
+				<!-- <th>Date Of Birth</th>
 				<th>Age</th>
 				<th>Cohort</th>
 				<th>Academic Qualification</th>
@@ -45,7 +46,7 @@
 				<th>Country</th>
 				<th>Remarks</th>
 				<th>Edit</th>
-				<th>Delete</th>
+				<th>Delete</th> -->
 				
 			</tr>
 		</thead>
@@ -54,34 +55,34 @@
 
 			$query = "SELECT * FROM staff_sec_a";
 			$select_user_query = mysqli_query($connection, $query);
-			while ($row = mysqli_fetch_assoc($select_user_query)) {?>
+			while ($row = mysqli_fetch_assoc($select_user_query)) {
+
+				$id = $row['id'];
+				$staff_id = $row['staff_id'];
+				$staff_name = $row['staff_name'];
+				$position = $row['position'];
+				$grade = $row['grade'];
+				$first_app_date = $row['first_app_date'];
+				$app_date_current = $row['app_date_current'];
+				$service_end_date = $row['service_end_date'];
+
+				?>
 
 
 
 				<tr>
 
-					<td><?php echo $row['staff_id']; ?></td>
-					<td><?php echo $row['staff_name']; ?></td>
-					<td><?php echo $row['position']; ?></td>
-					<td><?php echo $row['grade']; ?></td>
-					<td><?php echo $row['first_app_date']; ?></td>
-					<td><?php echo $row['app_date_current']; ?></td>
-					<td><?php echo $row['service_end_date']; ?></td>
-					<td><?php echo $row['dob']; ?></td>
-					<td><?php echo $row['age']; ?></td>
-					<td><?php echo $row['cohort']; ?></td>
-					<td><?php echo $row['academic_quali']; ?></td>
-					<td><?php echo $row['proff_quali']; ?></td>
-					<td><?php echo $row['department']; ?></td>
-					<td><?php echo $row['st_nonst']; ?></td>
-					<td><?php echo $row['status_1']; ?></td>
-					<td><?php echo $row['status_2']; ?></td>
-					<td><?php echo $row['status_3']; ?></td>
-					<td><?php echo $row['citizenship']; ?></td>
-					<td><?php echo $row['country']; ?></td>
-					<td><?php echo $row['remarks']; ?></td>
-					<td><a href="register.php?source=edit_user&uid=<?php echo $row['id']; ?>">edit</a></td>
-					<td><a onClick="javascript: return confirm('Are you sure you want to delete?');" href="register.php?delete=<?php echo $row['id']; ?>">delete</a></td>
+					<td><?php echo htmlentities($staff_id) ?></td>
+					<td><?php echo htmlentities($staff_name) ?></td>
+					<td><?php echo htmlentities($position)?></td>
+					<td><?php echo htmlentities($grade) ?></td>
+					<td><?php echo htmlentities($first_app_date) ?></td>
+					<td><?php echo htmlentities($app_date_current) ?></td>
+					<td><?php echo htmlentities($service_end_date) ?></td>
+					<td><a href="sec_a.php?source=display_sec_a_detail.php&id=<?php echo $id ?>">Details</a></td>
+
+					
+					
 				</tr>
 				<?php
 			}
@@ -95,36 +96,6 @@
 
 </div>
 
-<script>
-
-<div class="col-lg-4">
-	<div class="well well-sm">Senarai pelajar yang didaftar</div>
-</div>
-</div>
-
-<?php 
-
-if (isset($_GET['delete'])) {
-	
-	$user_id = mysqli_real_escape_string($connection, $_GET['delete']);
-        
-    $query = "DELETE FROM users WHERE id = $user_id ";
-    $delete_query = mysqli_query($connection, $query);
-    
-    header("Location: sec_a.php");
-}
 
 
-
-
-
- ?>
-
- <script>
-
-            $(document).ready(function() {
-                $('#dataTables-example').DataTable({
-                        responsive: true
-                });
-            });
- </script>
+ 
