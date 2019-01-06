@@ -18,13 +18,7 @@ if (isset($_GET['id'])) {
 	    </div>
 	</div>
 
-	<!-- <div class="row">
-	<div class="col-lg-12">
-	<p><a href="sec_a.php?source=add_staff" class="btn btn-primary">Staff</a></p>
-    <div class="col-lg-12">
-        <h1 class="page-header">Staff List</h1>
-    </div>
-</div> -->
+
 
 <div class="row">
 	<div class="col-lg-12">
@@ -152,7 +146,7 @@ if (isset($_GET['id'])) {
 				</tr>
 				<tr>
 					<th>Edit</th>
-					<td><a href="sec_a.php?source=edit_staff">Edit</a></td>
+					<td><a href="sec_a.php?source=edit_staff&edit=<?php echo $id; ?>">Edit</a></td>
 				</tr>
 				<tr>
 					<th>Delete</th>

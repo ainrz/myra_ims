@@ -1,4 +1,42 @@
+
 <?php 
+
+if (isset($_GET['edit'])) {
+	$id = $_GET['edit'];
+
+
+	$query = "SELECT * FROM staff_sec_a WHERE id=$id";
+	$result = mysqli_query($connection, $query);
+
+	while ($row = mysqli_fetch_assoc($result)) {
+		
+		$db_id = $row['id'];
+		$db_staff_id = $row['staff_id'];
+		$db_staff_name = $row['staff_name'];
+		$db_position = $row['position'];
+		$db_grade = $row['grade'];
+		$db_first_app_date = $row['first_app_date'];
+		$db_app_date_current = $row['app_date_current'];
+		$db_service_end_date = $row['service_end_date'];
+		$db_dob = $row['dob'];
+		$db_age = $row['age'];
+		$db_cohort = $row['cohort'];
+		$db_academic_quali = $row['academic_quali'];
+		$db_proff_quali = $row['proff_quali'];
+		$db_reg_num = $row['reg_num'];
+		$db_department = $row['department'];
+		$db_st_nonst = $row['st_nonst'];
+		$db_status_1 = $row['status_1'];
+		$db_status_2 = $row['status_2'];
+		$db_status_3 = $row['status_3'];
+		$db_citizenship = $row['citizenship'];
+		$db_country = $row['country'];
+		$db_remarks = $row['remarks'];
+		$db_doc = $row['doc'];
+	}
+} else {
+	$id = "";
+}
 
 			$message = "";
 			if (isset($_POST['add'])) {
@@ -6,44 +44,56 @@
 
 				$staff_id = $_POST['staff_id'];
 				$staff_name = $_POST['staff_name'];
-				$patent_id = $_POST['patent_id'];
-				$patent_name = $_POST['patent_name'];
-				$date_filed = $_POST['date_filed'];
-				$date_granted = $_POST['date_granted'];
-				$fac = $_POST['fac'];
+				$position = $_POST['position'];
+				$grade = $_POST['grade'];
+				$first_app_date = $_POST['first_app_date'];
+				$app_date_current = $_POST['app_date_current'];
+				$service_end_date = $_POST['service_end_date'];
+				$dob = $_POST['dob'];
+				$age = $_POST['age'];
+				$cohort = $_POST['cohort'];
+				$academic_quali = $_POST['academic_quali'];
+				$proff_quali = $_POST['proff_quali'];
+				$reg_num = $_POST ['reg_num'];
+				$department = $_POST['department'];
+				$st_nonst = $_POST['st_nonst'];
+				$status_1 = $_POST['status_1'];
+				$status_2 = $_POST['status_2'];
+				$status_3 = $_POST['status_3'];
+				$citizenship = $_POST['citizenship'];
 				$country = $_POST['country'];
 				$remarks = $_POST['remarks'];
-				
 
-				// masukkan data kt table award
+				// masukkan data kt table staff
 
 
-				$query = "INSERT INTO patent( staff_id, staff_name, patent_id, patent_name, date_filed, date_granted, fac, country, remarks) ";
-
-				// masukkan data kt critical_mass
-
-				$query .= "VALUES('$staff_id', '$staff_name', '$patent_id', '$patent_name', '$date_filed', '$date_granted', 'fac', '$country', '$remarks')";
+				$query = "UPDATE staff_sec_a SET staff_id='$staff_id', staff_name='staff_name', position='$position', grade='$grade', first_app_date='$first_app_date', app_date_current='$app_date_current', service_end_date='$service_end_date', dob='$dob', age='$age', cohort='$cohort', academic_quali='$academic_quali', proff_quali='$proff_quali', reg_num='$reg_num', department='$department', st_nonst='$st_nonst', status_1='$status_1', status_2='$status_2', status_3='$status_3', citizenship='$citizenship', country='$country', remarks='$remarks' WHERE id=$id"; 
 
 				$update_user = mysqli_query($connection, $query);
+
+
 
 				if (!$update_user) {
 					die("query failed" . mysqli_error($connection));
 					exit();
 				} else {
 
-					$message = "<p class='bg-danger'>Award added<a href='sec_a.php?source=view_staff'> View UG Student</a></p>";
+					$message = "<p class='bg-danger'>staff added<a href='sec_a.php?source=display_sec_a_detail&id={$id}'> View user</a></p>";
 				}
 					
 			}
 		?>
+
+
+
 <div class="row">
 	    <div class="col-lg-12">
-	        <h1 class="page-header">Section E : Patents</h1>
+	        <h1 class="page-header">Section A : General Information</h1>
 	    </div>
 	</div>
 	<div class="row">
 	    <div class="col-lg-6">
-	        <h3 class="page-header">Patents Granted</h3>
+	        <h3 class="page-header">Staff</h3>
 
 	    </div>
 	</div>
@@ -53,42 +103,128 @@
 		<form action="" method="post">
 			<div class="form-group">
 				<label for="staff_id">Staff ID</label>
-				<input type="text" name="stafft_id" class="form-control" required>
+				<input type="text" name="staff_id" class="form-control" value="<?php echo $db_staff_id ?>" required>
 			</div>
 			<div class="form-group">
 				<label for="staff_name">Staff Name</label>
-				<input type="text" name="staff_name" class="form-control" required>
+				<input type="text" name="staff_name" class="form-control" value="<?php echo $db_staff_name ?>" required>
 			</div>
 			<div class="form-group">
-				<label for="patent_id">Patent ID</label>
-				<input type="text" name="patent_id" class="form-control" required>
+				<label for="position">Job Position</label>
+				<input type="text" name="position" class="form-control" value="<?php echo $db_position ?>" required>
 			</div>
 			<div class="form-group">
-				<label for="patent_name">Patent Name</label>
-				<input type="text" name="patent_name" class="form-control" required>
+				<label for="grade">Grade (Civil Servant)</label>
+				<input type="text" name="grade" class="form-control" value="<?php echo $db_grade ?>" required>
 			</div>
 			<div class="form-group">
-				<label for="date_filed">Date Filed</label>
-				<input type="date" name="date_filed" class="form-control" required>
+				<label for="first_app_date">First Appointment date</label>
+				<input type="date" name="first_app_date" class="form-control" value="<?php echo $db_first_app_date ?>" required>
 			</div>
 			<div class="form-group">
-				<label for="date_granted">Date Granted</label>
-				<input type="date" name="date_granted" class="form-control" required>
+				<label for="app_date_current">Appointment date for current position</label>
+				<input type="date" name="app_date_current" class="form-control" value="<?php echo $db_app_date_current ?>" required>
 			</div>
 			<div class="form-group">
-				<label for="fac">Faculty</label>
-				<select class="form-control" name="fac" required>
-					<option value="">--Please select--</option>
+				<label for="service_end_date">Service end date</label>
+				<input type="date" name="service_end_date" class="form-control" value="<?php echo $db_service_end_date ?>" required>
+			</div>
+			<div class="form-group">
+				<label for="dob">Date Of Birth</label>
+				<input type="date" name="dob" class="form-control" value="<?php echo $db_dob ?>" required>
+			</div>
+			<div class="form-group">
+				<label for="age">Age</label>
+				<input type="number" name="age" class="form-control" value="<?php echo $db_age ?>" required>
+			</div>
+			<div class="form-group">
+				<label for="cohort">Cohort</label>
+				<input type="text" name="cohort" class="form-control" value="<?php echo $db_cohort ?>" required>
+			</div>
+			<div class="form-group">
+				<label for="academic_quali">Academic Qualification</label>
+				<select class="form-control" name="academic_quali" required>
+					<!-- <option value="">--Please select--</option> -->
+					<?php echo "<option value='{$db_academic_quali}'>{$db_academic_quali}</option>"; ?>
+					<option value="Degree">Degree</option>
+					<option value="Master">Master</option>
+					<option value="PHD">PHD</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="proff_quali">Profesional Qualification</label>
+				<input type="text" name="proff_quali" class="form-control" value="<?php echo $db_proff_quali ?>" required>
+			</div>
+			<div class="form-group">
+				<label for="reg_num">Registration number for Profesional Membership</label>
+				<input type="text" name="reg_num" class="form-control" value="<?php echo $db_reg_num ?>" required>
+			</div>
+			<div class="form-group">
+				<label for="department">Department</label>
+				<select class="form-control" name="department" required>
+					<?php echo "<option value='{$db_department}'>{$db_department}</option>"; ?>
+
+					<option value="admin_hr">Administration & Human Resources Office</option>
+					<option value="record_convo">Record & Convocation Unit</option>
 					<option value="fcvac">Faculty of Communication, Visual Art & Computing</option>
 					<option value="fels">Faculty of Engineering & Life Science</option>
 					<option value="fess">Faculty of Education & Science Social</option>
 					<option value="fba">Faculty of Business & Accountancy</option>
+					<option value="grad_stu">Centre of Graduate Studies</option>
+					<option value="bursar">Bursar Office</option>
+					<option value="coe">Centre of Excellent</option>
+					<option value="library">Unisel Library</option>
 				</select>
 			</div>
+			<div class="form-group">
+				<label for="st_nonst">S&T or non S&T</label>
+				<select class="form-control" name="st_nonst" required>
+					<?php echo "<option value='{$db_st_nonst}'>{$db_st_nonst}</option>"; ?>
+					<option value="st">S&T</option>
+					<option value="nonst">non S&T</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="status_1">Status 1</label>
+				<select class="form-control" name="status_1"  required>
+					<?php echo "<option value='{$db_status_1}'>{$db_status_1}</option>"; ?>
+					<option value="active">Active</option>
+					<option value="stud_lev">Study Leaves</option>
+					<option value="sabbatical">Sabbatical</option>
+					<option value="trainning">Trainning</option>
+					<option value="attachment">Attachment</option>
+					<option value="seconded">Seconded</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="status_2">Status 2</label>
+				<select class="form-control" name="status_2" required>
+					<?php echo "<option value='{$db_status_2}'>{$db_status_2}</option>"; ?>
+					<option value="contract">Contract</option>
+					<option value="permanent">Permanent</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="status_3">Status 3</label>
+				<select class="form-control" name="status_3" required>
+					<?php echo "<option value='{$db_status_3}'>{$db_status_3}</option>"; ?>
+					<option value="full_time">Full Time</option>
+					<option value="part_time">Part Time</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="citizenship">Citizenship</label>
+				<select class="form-control" name="citizenship" required>
+					<?php echo "<option value='{$db_citizenship}'>{$db_citizenship}</option>"; ?>
+					<option value="local">Local</option>
+					<option value="foreign">Foreign</option>
+				</select>
+			</div>
+			<!-- country selection -->
 			<div class="form-group"> 
 				<label for="country">Country</label>
 				<select class="form-control" name="country" required>
-					<option value="">--Please select--</option>
+					<?php echo "<option value='{$db_country}'>{$db_country}</option>"; ?>
 					<option value="AF">Afghanistan</option>
 					<option value="AX">Åland Islands</option>
 					<option value="AL">Albania</option>
@@ -343,11 +479,22 @@
 			</div>
 			<div class="form-group">
 				<label for="remarks">Remarks</label>
-				<input type="text" name="remarks" class="form-control" required>
+				<input type="text" name="remarks" class="form-control" value="<?php echo $db_remarks ?>" required>
 			</div>
 			<div class="form-group">
 				<input type="submit" name="add" class="btn btn-block btn-primary" value="Add">
 			</div>
 		</form>
 	</div>
-	
+	<div class="col-lg-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="text-center">
+					<img src="https://t4.ftcdn.net/jpg/01/16/06/45/240_F_116064582_KlXENacGmdt4xl8H6fQRYfSZLntLNKSX.jpg" class="rounded">
+					<h1>Staff</h1>
+				</div>
+				
+				<!-- <h1>Staff</h1> -->
+			</div>
+		</div>
+	</div>

@@ -5,13 +5,7 @@
 	    </div>
 	</div>
 
-	<!-- <div class="row">
-	<div class="col-lg-12">
-	<p><a href="sec_a.php?source=add_staff" class="btn btn-primary">Staff</a></p>
-    <div class="col-lg-12">
-        <h1 class="page-header">Staff List</h1>
-    </div>
-</div> -->
+
 
 <div class="row">
 	<div class="col-lg-12">
@@ -22,7 +16,7 @@
 		<thead>
 			<tr>
 
-				<!-- <th>id</th> -->
+				
 				<th width="12%">Staff ID</th>
 				<th width="12%">Staff Name</th>
 				<th width="12%">Position</th>
@@ -31,22 +25,7 @@
 				<th width="12%">Appointment Date For Current Position</th>
 				<th width="12%">Service End Date</th>
 				<th width="12%">Details</th>
-				<!-- <th>Date Of Birth</th>
-				<th>Age</th>
-				<th>Cohort</th>
-				<th>Academic Qualification</th>
-				<th>Profesional Qualification</th>
-				<th>Registration Number for Profesional Membership</th>
-				<th>Department</th>
-				<th>S&T or non S&T</th>
-				<th>Status 1</th>
-				<th>Status 2</th>
-				<th>Status 3</th>
-				<th>Citizenship</th>
-				<th>Country</th>
-				<th>Remarks</th>
-				<th>Edit</th>
-				<th>Delete</th> -->
+				
 				
 			</tr>
 		</thead>

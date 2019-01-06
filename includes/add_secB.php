@@ -147,15 +147,3 @@
 			</div>
 		</form>
 	</div>
-	<div class="col-lg-4">
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<div class="text-center">
-					<img src="https://t4.ftcdn.net/jpg/01/16/06/45/240_F_116064582_KlXENacGmdt4xl8H6fQRYfSZLntLNKSX.jpg" class="rounded">
-					<h1>Undergraduate Student</h1>
-				</div>
-				
-				<!-- <h1>Staff</h1> -->
-			</div>
-		</div>
-	</div>

@@ -17,7 +17,7 @@
 				$document = $_POST['document'];
 				
 
-				// masukkan data kt table critical_mass
+				// masukkan data kt table award
 
 
 				$query = "INSERT INTO Award(staff_id, staff_name, fac, name_award, type_award, confer_body, title_invention, event, date_add, remarks, document) ";
@@ -105,7 +105,7 @@
 				<input type="text" name="remarks" class="form-control" required>
 			</div>
 			<div class="form-group">
-				<label for="remarks">Award</label>
+				<label for="remarks">Upload document</label>
 				<input type="file" name="file" class="form-control" required>
 			</div>
 			<div class="form-group">
@@ -113,10 +113,3 @@
 			</div>
 		</form>
 	</div>
-	<div class="col-lg-4">
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<div class="text-center">
-					
-					<h1>Award</h1>
-				</div>

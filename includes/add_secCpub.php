@@ -1,3 +1,45 @@
+<?php 
+
+			$message = "";
+			if (isset($_POST['add'])) {
+				
+
+				$article_id = $_POST['article_id'];
+				$staff_id = $_POST['staff_id'];
+				$staff_name = $_POST['staff_name'];
+				$co_author = $_POST['co_author'];
+				$author = $_POST['author'];
+				$pub_category = $_POST['pub_category'];
+				$doc_title = $_POST['doc_title'];
+				$source_title = $_POST['source_title'];
+				$page_start = $_POST['page_start'];
+				$page_end= $_POST['page_end'];
+				$year = $_POST['year'];
+				$issn_isbn = $_POST['issn_isbn'];
+				$remarks = $_POST['remarks'];
+				
+
+				// masukkan data kt table award
+
+
+				$query = "INSERT INTO publication(article_id, staff_id, staff_name, co_author, author, pub_category, doc_title, source_title, page_start, page_end, year, issn_isbn, remarks) ";
+
+				// masukkan data kt critical_mass
+
+				$query .= "VALUES('$article_id' ,'$staff_id', '$staff_name', '$co_author', '$author', '$pub_category', '$doc_title', 'source_title', '$page_start', '$page_end', '$year','$issn_isbn', '$remarks')";
+
+				$update_user = mysqli_query($connection, $query);
+
+				if (!$update_user) {
+					die("query failed" . mysqli_error($connection));
+					exit();
+				} else {
+
+					$message = "<p class='bg-danger'>Award added<a href='sec_a.php?source=view_staff'> View UG Student</a></p>";
+				}
+					
+			}
+		?>
 <div class="row">
 	    <div class="col-lg-12">
 	        <h1 class="page-header">Section C : Publication</h1>
@@ -83,10 +125,3 @@
 			</div>
 		</form>
 	</div>
-	<div class="col-lg-4">
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<div class="text-center">
-					<img src="https://t4.ftcdn.net/jpg/01/16/06/45/240_F_116064582_KlXENacGmdt4xl8H6fQRYfSZLntLNKSX.jpg" class="rounded">
-					<h1>Publication</h1>
-				</div>
