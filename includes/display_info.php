@@ -58,7 +58,7 @@
 					<td><?php echo htmlentities($first_app_date) ?></td>
 					<td><?php echo htmlentities($app_date_current) ?></td>
 					<td><?php echo htmlentities($service_end_date) ?></td>
-					<td><a href="sec_a.php?source=display_sec_a_detail.php&id=<?php echo $id ?>">Details</a></td>
+					<td><a href="sec_a.php?source=display_sec_a_detail&id=<?php echo $id ?>">Details</a></td>
 
 					
 					

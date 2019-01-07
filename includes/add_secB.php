@@ -25,7 +25,7 @@
 				// masukkan data kt table critical_mass
 
 
-				$query = "INSERT INTO critical_mass(project_id, staff_id, staff_name, fac, st_nonst, research_titlle, start_date, end_date, yr_duration, sponsor, sponsor_categry, grant_name, amnt_pldg, amnt_recvd, amnt_spend, remarks) ";
+				$query = "INSERT INTO citical_mass(project_id, staff_id, staff_name, fac, st_nonst, research_titlle, start_date, end_date, yr_duration, sponsor, sponsor_categry, grant_name, amnt_pldg, amnt_recvd, amnt_spend, remarks) ";
 
 				// masukkan data kt critical_mass
 
@@ -38,7 +38,7 @@
 					exit();
 				} else {
 
-					$message = "<p class='bg-danger'>Undergraduate Student added<a href='sec_a.php?source=view_staff'> View UG Student</a></p>";
+					$message = "<p class='bg-danger'>Critical Mass added<a href='sec_b.php?source=display_secB'> View Critical Mass</a></p>";
 				}
 					
 			}

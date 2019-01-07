@@ -25,14 +25,14 @@
                     
                 </div>
 
-                <div class="panel-footer">
+                <!-- <div class="panel-footer">
                     <p>
                         <div class="text-center">
                             <a href="guideline.php" class="btn btn-primary">see guidline</a>
                         </div>
                     
                     </p>
-                </div>
+                </div> -->
                 
             </div>
         </div>

@@ -17,25 +17,15 @@
 	}
 
 	switch ($source) {
-		case 'add_award':
-			include "includes/add_secBaward.php";
+		case 'add_student':
+			include "includes/add_secAstudent.php";
 			break;
-
-		case 'add_criticalmass':
-			include "includes/add_secB.php";
-			break;	
-		
-		case 'display_secB':
-			include "includes/display_secB.php";
-			break;
-
-		case 'report_secB':
-			include "includes/report_secB.php";
+		case 'add_pgstudent':
+			include "includes/add_secApgstudent.php";
 			break;		
 
-
 		default:
-			include "includes/add_secB.php";
+			include "display_info.php";
 			break;
 	}
 	?>

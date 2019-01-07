@@ -73,11 +73,11 @@
 			</div>
 			<div class="form-group">
 				<label for="chp_title">Chapter Title</label>
-				<input type="number" name="chp_title" class="form-control" required>
+				<input type="text" name="chp_title" class="form-control" required>
 			</div>
 			<div class="form-group">
 				<label for="publisher">Publisher</label>
-				<input type="number" name="publisher" class="form-control" required>
+				<input type="text" name="publisher" class="form-control" required>
 			</div>
 			<div class="form-group">
 				<label for="isbn">ISBN</label>

@@ -17,25 +17,17 @@
 	}
 
 	switch ($source) {
-		case 'add_award':
-			include "includes/add_secBaward.php";
+		case 'add_support':
+			include "includes/add_secHsupport.php";
 			break;
-
-		case 'add_criticalmass':
-			include "includes/add_secB.php";
-			break;	
-		
-		case 'display_secB':
-			include "includes/display_secB.php";
+			
+			case 'add_library':
+			include "includes/add_secHlibrary.php";
 			break;
-
-		case 'report_secB':
-			include "includes/report_secB.php";
-			break;		
-
+			
 
 		default:
-			include "includes/add_secB.php";
+			include "display_info.php";
 			break;
 	}
 	?>

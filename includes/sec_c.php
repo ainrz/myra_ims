@@ -17,25 +17,17 @@
 	}
 
 	switch ($source) {
-		case 'add_award':
-			include "includes/add_secBaward.php";
-			break;
-
 		case 'add_criticalmass':
 			include "includes/add_secB.php";
-			break;	
-		
-		case 'display_secB':
-			include "includes/display_secB.php";
 			break;
 
-		case 'report_secB':
-			include "includes/report_secB.php";
-			break;		
+		case 'add_award':
+			include "includes/add_secBaward.php";
+			break;	
 
 
 		default:
-			include "includes/add_secB.php";
+			include "includes/add_secBaward.php";
 			break;
 	}
 	?>
