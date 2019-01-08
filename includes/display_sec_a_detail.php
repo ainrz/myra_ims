@@ -162,8 +162,9 @@ if (isset($_GET['id'])) {
 				
 			</tbody>
 		</table>
+		<p><a class="btn btn-primary" href="includes/downloadFile.php?id=<?php echo $id ?>">Download File</a></p>
 
-<p><a class="btn btn-primary" href="uploads/<?php echo $doc ?>" target="_blank">Download</a></p>
+<!-- <p><a class="btn btn-primary" href="uploads/<?php echo $doc ?>" target="_blank">Download</a></p> -->
 </div>
 
 
